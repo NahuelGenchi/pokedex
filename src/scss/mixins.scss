@@ -1,0 +1,12 @@
+@use "./colors/neutral.scss" as neutral;
+@use "./variables.scss" as variable;
+
+@mixin flex-center() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin border($property: border, $color: neutral.$c5) {
+  #{$property}: variable.$standard-border $color;
+}
