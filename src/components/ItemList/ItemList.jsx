@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Pagination } from "../index";
 
 import "./ItemList.scss";
 
@@ -11,7 +12,7 @@ const ItemList = () => {
 
   useEffect(() => {
     setLoading(true);
-    fetch("https://pokeapi.co/api/v2/pokemon")
+    fetch(currentUrl)
       .then(data => data.json())
       .then(data => {
         console.log(data);
@@ -26,16 +27,27 @@ const ItemList = () => {
     return "Loading...";
   };
 
-  const goNextUrl = () => {
-    setCurrentUrl(pokemonList.next);
+  const goToNextPage = () => {
+    setCurrentUrl(nextUrl);
+  };
+
+  const goToPrevPage = () => {
+    setCurrentUrl(prevUrl);
   };
 
   return(
-    <div>
-      <div>
-        <button>Previous</button>
-        <button>Next</button>
+    <div className="itemlist-bcontainer">
+      <div className="ibcontainer-items">
+        {pokemonList.results.map((pokemon, index) => {
+          return(
+            <div key={index}>{pokemon.name}</div>
+          );
+        })}
       </div>
+      <Pagination
+        goToNextPage={nextUrl ? goToNextPage : null}
+        goToPrevPage={prevUrl ? goToPrevPage : null}
+      />
     </div>
   );
 };
