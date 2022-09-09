@@ -1,9 +1,13 @@
 @use "../../scss/mixins.scss" as mixin;
 
 .item-container {
+  padding: 1rem;
+
   @include mixin.flex-center;
   justify-content: initial;
   gap: 1rem;
+
+  cursor: pointer;
 
   .item-c-img {
     @include mixin.flex-center;

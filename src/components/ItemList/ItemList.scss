@@ -1,3 +1,17 @@
 .itemlist-bcontainer {
-  padding: 2rem;
+  padding: 1rem;
+
+  .ibcontainer-items {
+    .item-container:nth-of-type(odd) {
+      background-color: #ECECEC;
+    }
+
+    .item-container {
+      transition: background-color 0.5s;
+
+      &:hover {
+        background-color: #d0d0d0;
+      }
+    }
+  }
 }
