@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Pagination } from "../index";
+import { Pagination, Item } from "../index";
 
 import "./ItemList.scss";
 
@@ -40,7 +40,7 @@ const ItemList = () => {
       <div className="ibcontainer-items">
         {pokemonList.results.map((pokemon, index) => {
           return(
-            <div key={index}>{pokemon.name}</div>
+            <Item pokemonData={pokemon} key={index}/>
           );
         })}
       </div>

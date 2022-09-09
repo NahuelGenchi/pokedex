@@ -7,6 +7,6 @@
   justify-content: center;
 }
 
-@mixin border($property: border, $color: neutral.$c5) {
+@mixin border($property: border, $color: neutral.$c3) {
   #{$property}: variable.$standard-border $color;
 }

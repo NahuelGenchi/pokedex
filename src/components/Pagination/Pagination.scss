@@ -1,0 +1,25 @@
+@use "../../scss/mixins.scss" as mixin;
+@use "../../scss/colors/neutral.scss" as neutral;
+
+.pagination-container {
+  margin: 2rem 0;
+
+  @include mixin.flex-center;
+  gap: 1rem;
+
+  button {
+    padding: 0.5rem 1rem;
+    @include mixin.border;
+
+    background-color: neutral.$c0;
+
+    cursor: pointer;
+
+    transition: background-color 0.5s, color 0.5s;
+
+    &:hover {
+      background-color: neutral.$c6;
+      color: neutral.$c0;
+    }
+  }
+}

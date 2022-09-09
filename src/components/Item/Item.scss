@@ -1,0 +1,26 @@
+@use "../../scss/mixins.scss" as mixin;
+
+.item-container {
+  @include mixin.flex-center;
+  justify-content: initial;
+  gap: 1rem;
+
+  .item-c-img {
+    @include mixin.flex-center;
+  }
+
+  .item-c-name {
+    text-transform: capitalize;
+  }
+
+  .item-c-types {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-grow: 1;
+    gap: 0.5rem;
+
+    text-transform: uppercase;
+    font-size: 0.7rem;
+  }
+}

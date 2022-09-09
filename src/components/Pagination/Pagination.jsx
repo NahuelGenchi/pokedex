@@ -1,3 +1,5 @@
+import "./Pagination.scss";
+
 const Pagination = (props) => {
   return(
     <div className="pagination-container">
