@@ -2,6 +2,11 @@
   padding: 1rem;
 
   .ibcontainer-items {
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
     .item-container:nth-of-type(odd) {
       background-color: #ECECEC;
     }
