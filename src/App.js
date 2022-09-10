@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { ItemList } from "./components";
+import { ItemList, ItemDetailContainer } from "./components";
 
 import "./scss/main.scss";
 
@@ -9,7 +9,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<ItemList/>}/>
         <Route path="/pokemon" element={<ItemList/>}/>
-        <Route path="/pokemon/:name" element={"Pokemon"}/>
+        <Route path="/pokemon/:name" element={<ItemDetailContainer/>}/>
         <Route path="*" element={"Invalid path. Please enter a valid URL."}/>
       </Routes>
     </BrowserRouter>

@@ -12,7 +12,7 @@ const Item = (props) => {
     fetch(props.pokemonData.url)
       .then(data => data.json())
       .then(data => {
-        console.log(data);
+        //console.log(data);
         setPokemon(data);
         setLoading(false);
       })

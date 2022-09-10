@@ -2,20 +2,22 @@
   padding: 1rem;
 
   .ibcontainer-items {
+    a:nth-of-type(odd) {
+      .item-container {
+        background-color: #ECECEC;
+      }
+    }
+
     a {
       text-decoration: none;
       color: inherit;
-    }
 
-    .item-container:nth-of-type(odd) {
-      background-color: #ECECEC;
-    }
-
-    .item-container {
-      transition: background-color 0.5s;
-
-      &:hover {
-        background-color: #d0d0d0;
+      .item-container {
+        transition: background-color 0.5s;
+  
+        &:hover {
+          background-color: #d0d0d0;
+        }
       }
     }
   }

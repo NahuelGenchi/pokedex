@@ -1,0 +1,31 @@
+@use "../../scss/mixins.scss" as mixin;
+@use "../../scss/colors/neutral.scss" as neutral;
+
+.itemdetail-container {
+  padding: 1rem;
+
+  .itemdetail-c-name {
+    padding: 1rem 0;
+
+    @include mixin.flex-center;
+    gap: 0.5rem;
+
+    h1 {
+      text-transform: capitalize;
+    }
+
+    div {
+      font-size: 1.7rem;
+      color: neutral.$c5;
+    }
+  }
+
+  .itemdetail-c-img {
+    width: 100%;
+
+    img {
+      width: 100%;
+      padding: 1rem 2rem;
+    }
+  }
+}
