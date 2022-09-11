@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { ItemDetail } from "../index";
 
 import "./ItemDetailContainer.scss";
 
@@ -32,6 +33,7 @@ const ItemDetailContainer = () => {
       <div className="itemdetail-c-img">
         <img src={pokemon.sprites.other["official-artwork"].front_default} alt={`${pokemon.name} official artwork`}/>
       </div>
+      <ItemDetail pokemonDetailsUrl={pokemon.species.url} pokemonTypes={pokemon.types} pokemonWeight={pokemon.weight} pokemonHeight={pokemon.height}/>
     </div>
   );
 };
