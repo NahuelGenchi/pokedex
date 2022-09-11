@@ -35,41 +35,46 @@
   .itemdetail-c-info {
     width: 100%;
     padding: 1.5rem 1rem;
+    border-radius: 5px;
 
     display: flex;
     gap: 2rem;
 
     background-color: neutral.$c0;
 
-    .strong {
-      font-weight: bold;
-    }
-
     .itemdetail-c-i-col {
       display: flex;
       flex-direction: column;
-      gap: 1rem;
+      gap: 2rem;
 
-      .itemdetail-c-i-c-cell {
-        padding: 1rem;
-
+      .itemdetail-c-i-c-row {
         display: flex;
-        gap: 0.5rem;
+  
+        .itemdetail-c-i-c-cell {
+          width: 6rem;
+  
+          display: flex;
+          gap: 0.5rem;
 
-        text-transform: capitalize;
-      }
+          text-transform: capitalize;
+        }
 
-      .poketypes {
-        font-size: 0.7rem;
-        color: white;
-        text-transform: uppercase;
+        .strong {
+          font-weight: bold;
+        }
 
-        div {
-          padding: 0.3rem;
-          min-width: 3rem;
-          border-radius: 5px;
+        .poketypes {
+          div {
+            min-width: 3rem;
+            padding: 0.3rem 2rem;
+            border-radius: 5px;
 
-          @include mixin.flex-center;
+            @include mixin.flex-center;
+
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            color: neutral.$c0;
+          }
         }
       }
     }

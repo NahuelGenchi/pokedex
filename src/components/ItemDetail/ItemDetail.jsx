@@ -23,19 +23,18 @@ const ItemDetail = ({pokemonDetailsUrl, pokemonTypes, pokemonWeight, pokemonHeig
 
   return (
     <div className="itemdetail-c-info">
-      <div className="itemdetail-c-i-col strong">
-        <div className="itemdetail-c-i-c-cell">ID:</div>
-        <div className="itemdetail-c-i-c-cell">Name:</div>
-        <div className="itemdetail-c-i-c-cell">Type:</div>
-        <div className="itemdetail-c-i-c-cell">Weight:</div>
-        <div className="itemdetail-c-i-c-cell">Height:</div>
-        <div className="itemdetail-c-i-c-cell">Color:</div>
-        <div className="itemdetail-c-i-c-cell">Habitat:</div>
-      </div>
       <div className="itemdetail-c-i-col">
-        <div className="itemdetail-c-i-c-cell"># {pokemonDetails.id}</div>
-        <div className="itemdetail-c-i-c-cell">{pokemonDetails.name}</div>
-        <div className="itemdetail-c-i-c-cell poketypes">
+        <div className="itemdetail-c-i-c-row">
+          <div className="itemdetail-c-i-c-cell strong">ID:</div>
+          <div className="itemdetail-c-i-c-cell"># {pokemonDetails.id}</div>
+        </div>
+        <div className="itemdetail-c-i-c-row">
+          <div className="itemdetail-c-i-c-cell strong">Name:</div>        
+          <div className="itemdetail-c-i-c-cell">{pokemonDetails.name}</div>
+        </div>
+        <div className="itemdetail-c-i-c-row">
+          <div className="itemdetail-c-i-c-cell strong">Type:</div>
+          <div className="itemdetail-c-i-c-cell poketypes">
           {pokemonTypes.map((pokemonType, index) => {
             return(
               <div
@@ -67,11 +66,24 @@ const ItemDetail = ({pokemonDetailsUrl, pokemonTypes, pokemonWeight, pokemonHeig
               </div>
             );
           })}
+          </div>
         </div>
-        <div className="itemdetail-c-i-c-cell">{pokemonWeight}</div>
-        <div className="itemdetail-c-i-c-cell">{pokemonHeight}</div>
-        <div className="itemdetail-c-i-c-cell">{pokemonDetails.color.name}</div>
-        <div className="itemdetail-c-i-c-cell">{pokemonDetails.habitat.name}</div>
+        <div className="itemdetail-c-i-c-row">
+          <div className="itemdetail-c-i-c-cell strong">Weight:</div>
+          <div className="itemdetail-c-i-c-cell">{pokemonWeight}</div>
+        </div>
+        <div className="itemdetail-c-i-c-row">
+          <div className="itemdetail-c-i-c-cell strong">Height:</div>
+          <div className="itemdetail-c-i-c-cell">{pokemonHeight}</div>
+        </div>
+        <div className="itemdetail-c-i-c-row">
+          <div className="itemdetail-c-i-c-cell strong">Color:</div>
+          <div className="itemdetail-c-i-c-cell">{pokemonDetails.color.name}</div>
+        </div>
+        <div className="itemdetail-c-i-c-row">
+          <div className="itemdetail-c-i-c-cell strong">Habitat:</div>
+          <div className="itemdetail-c-i-c-cell">{pokemonDetails.habitat.name}</div>
+        </div>
       </div>
     </div>
   );
