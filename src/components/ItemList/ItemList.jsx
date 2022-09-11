@@ -35,20 +35,26 @@ const ItemList = () => {
     setCurrentUrl(prevUrl);
   };
 
-  return(
-    <div className="itemlist-bcontainer">
-      <div className="ibcontainer-items">
-        {pokemonList.results.map((pokemon, index) => {
-          return(
-            <Item pokemonData={pokemon} key={index}/>
-          );
-        })}
+  return (
+    <>
+      <header className="itemlist-header">
+        <h1>Pokémon List</h1>
+        <p>Select a pokémon and you'll see its details.</p>
+      </header>
+      <div className="itemlist-bcontainer">
+        <div className="ibcontainer-items">
+          {pokemonList.results.map((pokemon, index) => {
+            return (
+              <Item pokemonData={pokemon} key={index} />
+            );
+          })}
+        </div>
+        <Pagination
+          goToNextPage={nextUrl ? goToNextPage : null}
+          goToPrevPage={prevUrl ? goToPrevPage : null}
+        />
       </div>
-      <Pagination
-        goToNextPage={nextUrl ? goToNextPage : null}
-        goToPrevPage={prevUrl ? goToPrevPage : null}
-      />
-    </div>
+    </>
   );
 };
 
