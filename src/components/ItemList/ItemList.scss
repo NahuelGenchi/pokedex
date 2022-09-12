@@ -1,5 +1,8 @@
 .itemlist-header {
+  max-width: 60rem;
   padding: 3rem 1rem;
+  margin: 0 auto;
+
   text-align: center;
 
   h1 {
@@ -8,7 +11,9 @@
 }
 
 .itemlist-bcontainer {
+  max-width: 60rem;
   padding: 1rem;
+  margin: 0 auto;
 
   .ibcontainer-items {
     a:nth-of-type(odd) {

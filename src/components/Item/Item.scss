@@ -38,3 +38,11 @@
     }
   }
 }
+
+@media screen and (min-width: 768px) {
+  .item-container {
+    .item-c-types {
+      flex-direction: row;
+    }
+  }
+}
