@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { ItemList, ItemDetailContainer } from "./components";
+import { ItemList, ItemDetailContainer, Footer } from "./components";
 
 import "./scss/main.scss";
 
@@ -12,6 +12,7 @@ const App = () => {
         <Route path="/pokemon/:name" element={<ItemDetailContainer/>}/>
         <Route path="*" element={"Invalid path. Please enter a valid URL."}/>
       </Routes>
+      <Footer/>
     </BrowserRouter>
   );
 }
