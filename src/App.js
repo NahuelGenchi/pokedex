@@ -8,8 +8,9 @@ const App = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<ItemList/>}/>
-        <Route path="/pokemon" element={<ItemList/>}/>
-        <Route path="/pokemon/:name" element={<ItemDetailContainer/>}/>
+        <Route path="/pokedex" element={<ItemList/>} />
+        <Route path="/pokedex/:number" element={<ItemList/>}/>
+        <Route path="/pokedex/pokemon/:name" element={<ItemDetailContainer/>}/>
         <Route path="*" element={"Invalid path. Please enter a valid URL."}/>
       </Routes>
       <Footer/>

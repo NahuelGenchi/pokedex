@@ -82,7 +82,7 @@ const ItemDetail = ({pokemonDetailsUrl, pokemonTypes, pokemonWeight, pokemonHeig
         </div>
         <div className="itemdetail-c-i-c-row">
           <div className="itemdetail-c-i-c-cell strong">Habitat:</div>
-          <div className="itemdetail-c-i-c-cell">{pokemonDetails.habitat.name}</div>
+          <div className="itemdetail-c-i-c-cell">{pokemonDetails.habitat === null ? "No information" : pokemonDetails.habitat.name}</div>
         </div>
       </div>
     </div>

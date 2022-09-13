@@ -22,7 +22,7 @@ const Item = (props) => {
   };
 
   return (
-    <Link to={`/pokemon/${pokemon.name}`}>
+    <Link to={`/pokedex/pokemon/${pokemon.name}`}>
       <div className="item-container">
         <div className="item-c-img">
           <img src={pokemon.sprites.front_default} alt="Pokémon sprite" />

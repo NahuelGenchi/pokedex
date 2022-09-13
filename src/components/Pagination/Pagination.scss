@@ -7,12 +7,13 @@
   @include mixin.flex-center;
   gap: 1rem;
 
-  button {
+  a {
     padding: 0.5rem 1rem;
     @include mixin.border;
 
     background-color: neutral.$c0;
-
+    text-decoration: none;
+    color: inherit;
     cursor: pointer;
 
     transition: background-color 0.5s, color 0.5s;

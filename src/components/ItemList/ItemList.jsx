@@ -1,11 +1,15 @@
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import { Pagination, Item } from "../index";
 
 import "./ItemList.scss";
 
 const ItemList = () => {
+  const urlId = useParams().number;
+  console.log(urlId);
+
   const [pokemonList, setPokemonList] = useState();
-  const [currentUrl, setCurrentUrl] = useState("https://pokeapi.co/api/v2/pokemon");
+  const [currentUrl, setCurrentUrl] = useState(urlId === undefined ? "https://pokeapi.co/api/v2/pokemon" : `https://pokeapi.co/api/v2/pokemon?offset=${urlId * 2}0&limit=20`);
   const [nextUrl, setNextUrl] = useState();
   const [prevUrl, setPrevUrl] = useState();
   const [loading, setLoading] = useState(true);
@@ -21,7 +25,7 @@ const ItemList = () => {
         setPrevUrl(data.previous);
         setLoading(false);
       })
-  }, [currentUrl]);
+  }, [urlId, currentUrl]);
 
   if (loading) {
     return "Loading...";
@@ -50,8 +54,11 @@ const ItemList = () => {
           })}
         </div>
         <Pagination
-          goToNextPage={nextUrl ? goToNextPage : null}
-          goToPrevPage={prevUrl ? goToPrevPage : null}
+          nextPage={nextUrl ? nextUrl : null}
+          prevPage={prevUrl ? prevUrl : null}
+          goToNextPage={goToNextPage}
+          goToPrevPage={goToPrevPage}
+          urlId={urlId}
         />
       </div>
     </>
