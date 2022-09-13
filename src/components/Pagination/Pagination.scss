@@ -2,7 +2,7 @@
 @use "../../scss/colors/neutral.scss" as neutral;
 
 .pagination-container {
-  margin: 2rem 0;
+  margin-top: 3rem;
 
   @include mixin.flex-center;
   gap: 1rem;
