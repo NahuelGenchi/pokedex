@@ -1,10 +1,8 @@
 import { useEffect, useState } from "react";
 
-const ItemDetail = ({pokemonDetailsUrl, pokemonTypes, pokemonWeight, pokemonHeight}) => {
+const ItemDetail = ({pokemonDetailsUrl, pokemonTypes, pokemonWeight, pokemonHeight, handleEvolution}) => {
   const [pokemonDetails, setPokemonDetails] = useState();
   const [loading, setLoading] = useState(true);
-
-  console.log(pokemonTypes);
 
   useEffect(() => {
     setLoading(true);
@@ -13,6 +11,7 @@ const ItemDetail = ({pokemonDetailsUrl, pokemonTypes, pokemonWeight, pokemonHeig
       .then(data => {
         console.log(data);
         setPokemonDetails(data);
+        handleEvolution(data.evolution_chain);
         setLoading(false);
       })
   }, [pokemonDetailsUrl]);
