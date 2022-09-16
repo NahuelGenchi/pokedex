@@ -1,6 +1,11 @@
+@use "../../scss/colors/neutral.scss" as neutral;
+
 .pokemon-description {
   margin: 2rem 0;
-  padding: 0 0.5rem;
+  padding: 1rem;
+  border-radius: 5px;
 
+  background-color: neutral.$c5;
+  color: neutral.$c0;
   text-align: center;
 }

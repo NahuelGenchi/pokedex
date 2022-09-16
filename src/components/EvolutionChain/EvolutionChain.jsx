@@ -24,6 +24,7 @@ const EvolutionChain = ({ pokemonEvolutionUrl }) => {
 
   return(
     <div className="evolutionchain-container">
+      <h2>Evolutions</h2>
       <div>{pokemonEvolution.chain.species.name}</div>      
       {
         pokemonEvolution.chain.evolves_to.length === 0
