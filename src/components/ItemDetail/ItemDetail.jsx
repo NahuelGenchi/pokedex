@@ -15,7 +15,7 @@ const ItemDetail = ({pokemonDetailsUrl, pokemonTypes, pokemonWeight, pokemonHeig
         handleDescription(data.flavor_text_entries);
         setLoading(false);
       })
-  }, [pokemonDetailsUrl]);
+  }, [pokemonDetailsUrl]); // eslint-disable-line react-hooks/exhaustive-deps
 
   if (loading) {
     return "Loading Pokémon details...";
