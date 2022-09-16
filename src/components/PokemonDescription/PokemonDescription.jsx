@@ -2,7 +2,7 @@ import "./PokemonDescription.scss";
 
 const PokemonDescription = ({ pokemonDescription }) => {
   const englishDesc = pokemonDescription?.filter(desc => desc.language.name === "en");
-  console.log(englishDesc);
+
   return(
     <div className="pokemon-description">
       {pokemonDescription

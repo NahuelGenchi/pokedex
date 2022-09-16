@@ -21,7 +21,6 @@ const EvolutionChain = ({ pokemonEvolutionUrl }) => {
   };
 
   console.log(pokemonEvolution);
-  console.log(pokemonEvolution.chain.evolves_to.length)
 
   return(
     <div className="evolutionchain-container">
