@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { ItemDetail, EvolutionChain } from "../index";
+import { ItemDetail, PokemonDescription ,EvolutionChain } from "../index";
 
 import "./ItemDetailContainer.scss";
 
@@ -8,6 +8,7 @@ const ItemDetailContainer = () => {
   const [pokemon, setPokemon] = useState();
   const [loading, setLoading] = useState(true);
   const [pokemonEvolutionUrl, setPokemonEvolutionUrl] = useState();
+  const [pokemonDescription, setPokemonDescription] = useState();
   const { name } = useParams();
   
   useEffect(() => {
@@ -25,6 +26,10 @@ const ItemDetailContainer = () => {
     setPokemonEvolutionUrl(evolutionChain);
   };
 
+  const handleDescription = (description) => {
+    setPokemonDescription(description);
+  };
+
   if (loading) {
     return "Loading Pokémon data...";
   };
@@ -38,7 +43,15 @@ const ItemDetailContainer = () => {
       <div className="itemdetail-c-img">
         <img src={pokemon.sprites.other["official-artwork"].front_default} alt={`${pokemon.name} official artwork`}/>
       </div>
-      <ItemDetail pokemonDetailsUrl={pokemon.species.url} pokemonTypes={pokemon.types} pokemonWeight={pokemon.weight} pokemonHeight={pokemon.height} handleEvolution={handleEvolution}/>
+      <PokemonDescription pokemonDescription={pokemonDescription}/>
+      <ItemDetail
+        pokemonDetailsUrl={pokemon.species.url}
+        pokemonTypes={pokemon.types}
+        pokemonWeight={pokemon.weight}
+        pokemonHeight={pokemon.height}
+        handleEvolution={handleEvolution}
+        handleDescription={handleDescription}
+      />
       <EvolutionChain pokemonEvolutionUrl={pokemonEvolutionUrl}/>
     </div>
   );

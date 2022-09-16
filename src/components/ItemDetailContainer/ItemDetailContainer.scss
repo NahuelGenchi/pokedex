@@ -3,12 +3,14 @@
 
 .itemdetail-container {
   min-height: 100vh;
+  max-width: 60rem;
+  margin: 0 auto;
   padding: 1rem;
 
-  background-color: #f1f1f1;
+  background-color: neutral.$c0;
 
   .itemdetail-c-name {
-    padding: 1rem 0;
+    padding: 2rem 0;
 
     @include mixin.flex-center;
     gap: 0.5rem;
@@ -25,8 +27,13 @@
 
   .itemdetail-c-img {
     width: 100%;
+    max-width: 60rem;
+    margin: 2rem auto;
+    border-radius: 5px;
 
     @include mixin.flex-center;
+
+    background-color: neutral.$c2;
 
     img {
       width: 100%;
@@ -45,7 +52,8 @@
     display: flex;
     gap: 2rem;
 
-    background-color: neutral.$c0;
+    background-color: #30A7D7;
+    color: neutral.$c0;
 
     .itemdetail-c-i-col {
       display: flex;
