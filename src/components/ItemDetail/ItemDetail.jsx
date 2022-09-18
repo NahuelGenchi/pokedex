@@ -9,7 +9,6 @@ const ItemDetail = ({pokemonDetailsUrl, pokemonTypes, pokemonWeight, pokemonHeig
     fetch(pokemonDetailsUrl)
       .then(data => data.json())
       .then(data => {
-        console.log(data);
         setPokemonDetails(data);
         handleEvolution(data.evolution_chain);
         handleDescription(data.flavor_text_entries);

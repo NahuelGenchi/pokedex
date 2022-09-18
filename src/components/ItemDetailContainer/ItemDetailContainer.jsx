@@ -16,7 +16,6 @@ const ItemDetailContainer = () => {
     fetch(`https://pokeapi.co/api/v2/pokemon/${name}`)
       .then(data => data.json())
       .then(data => {
-        console.log(data);
         setPokemon(data);
         setLoading(false);
       })
