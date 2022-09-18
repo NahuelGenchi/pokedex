@@ -12,22 +12,14 @@
 
   background-color: neutral.$c1;
   text-align: center;
-  text-transform: capitalize;
 
   h2 {
     margin: 0 0 1rem;
   }
 
-  div:not(:last-child)::after {
-    content: "▼";
-    font-size: 0.7rem;
-  }
-
-  div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
+  .evolutionchain-c-pokemon {
+    .evolutionchain-c-p-name {
+      text-transform: capitalize;
+    }
   }
 }
