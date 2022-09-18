@@ -1,14 +1,8 @@
 @use "../../scss/colors/neutral.scss" as neutral;
 
-.evolutionchain-container {
+.evolutionchain-bcontainer {
   margin: 2rem 0;
   padding: 3rem 1rem;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 1rem;
 
   background-color: neutral.$c1;
   text-align: center;
@@ -17,9 +11,30 @@
     margin: 0 0 1rem;
   }
 
-  .evolutionchain-c-pokemon {
-    .evolutionchain-c-p-name {
-      text-transform: capitalize;
+  .evolutionchain-container {
+    margin: 3rem 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 3rem;
+
+    .evolutionchain-c-pokemon {
+      .evolutionchain-c-p-name {
+        text-transform: capitalize;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .evolutionchain-bcontainer {
+    .evolutionchain-container {
+      margin: 5rem 0;
+
+      flex-direction: row;
+      gap: 5rem;
     }
   }
 }

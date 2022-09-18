@@ -23,10 +23,10 @@ const EvolutionChain = ({ pokemonEvolutionUrl }) => {
     if (loading === false) {
       const callFirstPokemonEvolution = () => {
         fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonEvolution?.chain.species.name}`)
-        .then(data => data.json())
-        .then(data => {
-          setFirstPokeEvo(data);
-        })
+          .then(data => data.json())
+          .then(data => {
+            setFirstPokeEvo(data);
+          })
       };
       callFirstPokemonEvolution();
     }
@@ -59,41 +59,43 @@ const EvolutionChain = ({ pokemonEvolutionUrl }) => {
     return "Loading evolution chain...";
   };
 
-  return(
-    <div className="evolutionchain-container">
+  return (
+    <div className="evolutionchain-bcontainer">
       <h2>Evolutions</h2>
-      <div className="evolutionchain-c-pokemon">
-        <div className="evolutionchain-c-p-img">
-          <img src={firstPokeEvo?.sprites.front_default} alt={`${firstPokeEvo?.name} sprite`}/>
-        </div>
-        <div className="evolutionchain-c-p-name">{firstPokeEvo?.name}</div>
-      </div>    
-      {
-        pokemonEvolution.chain.evolves_to.length === 0
-        ?
-        <div>This Pokémon doesn't have evolutions.</div>
-        :
-        (
-          <div className="evolutionchain-c-pokemon">
-            <div className="evolutionchain-c-p-img">
-              <img src={secondPokeEvo?.sprites.front_default} alt={`${secondPokeEvo?.name} sprite`}/>
-            </div>
-            <div className="evolutionchain-c-p-name">{secondPokeEvo?.name}</div>
-          </div>
-        )
-      }
-      {
-        (pokemonEvolution.chain.evolves_to.length > 0 && pokemonEvolution.chain.evolves_to[0].evolves_to.length > 0)
-        ?
+      <div className="evolutionchain-container">
         <div className="evolutionchain-c-pokemon">
           <div className="evolutionchain-c-p-img">
-            <img src={thirdPokeEvo?.sprites.front_default} alt={`${thirdPokeEvo?.name} sprite`}/>
+            <img src={firstPokeEvo?.sprites.front_default} alt={`${firstPokeEvo?.name} sprite`} />
           </div>
-          <div className="evolutionchain-c-p-name">{thirdPokeEvo?.name}</div>
+          <div className="evolutionchain-c-p-name">{firstPokeEvo?.name}</div>
         </div>
-        :
-        null
-      }
+        {
+          pokemonEvolution.chain.evolves_to.length === 0
+            ?
+            <div>This Pokémon doesn't have evolutions.</div>
+            :
+            (
+              <div className="evolutionchain-c-pokemon">
+                <div className="evolutionchain-c-p-img">
+                  <img src={secondPokeEvo?.sprites.front_default} alt={`${secondPokeEvo?.name} sprite`} />
+                </div>
+                <div className="evolutionchain-c-p-name">{secondPokeEvo?.name}</div>
+              </div>
+            )
+        }
+        {
+          (pokemonEvolution.chain.evolves_to.length > 0 && pokemonEvolution.chain.evolves_to[0].evolves_to.length > 0)
+            ?
+            <div className="evolutionchain-c-pokemon">
+              <div className="evolutionchain-c-p-img">
+                <img src={thirdPokeEvo?.sprites.front_default} alt={`${thirdPokeEvo?.name} sprite`} />
+              </div>
+              <div className="evolutionchain-c-p-name">{thirdPokeEvo?.name}</div>
+            </div>
+            :
+            null
+        }
+      </div>
     </div>
   );
 };
